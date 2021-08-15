@@ -1,0 +1,82 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.logo a{
+    color: #ffb600;
+    text-decoration: none;
+}
+
+.navbar{
+    width: 100%;
+    display: flex;
+    color: #ffb600;
+    justify-content: space-around;
+    align-items: center;
+    height: 120px;
+}
+
+.nav-list{
+    display: flex;
+    list-style-type: none;
+    width: 40%;
+    justify-content: space-around;
+    font-size: 1.2em;
+}
+
+.nav-list a{
+    color: #ffb600;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-list a:hover{
+    color: #f3d790;
+}
+
+.container{
+    width: 60%;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    margin: 24px auto;
+}
+
+.judul-container{
+    /* text-align: center; */
+    font-size: 2.2em;
+    font-weight: bold;
+}
+
+.hobbys{
+    display: grid;
+    height: 100%;
+    grid-template-areas: 
+        'hobby-1-image hobby-1-text'
+        'hobby-2-text hobby-2-image';
+    margin: 32px auto;
+    place-items: center;
+    row-gap: 12px;
+
+}
+
+.hobby-1-image{
+    grid-area: hobby-1-image;
+}
+
+.hobby-1-text{
+    grid-area: hobby-1-text;
+}
+
+.hobby-2-image{
+    grid-area: hobby-2-image;
+}
+
+.hobby-2-text{
+    grid-area: hobby-2-text;
+}

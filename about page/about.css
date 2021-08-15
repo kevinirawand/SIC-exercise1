@@ -1,0 +1,110 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.logo a{
+    color: #ffb600;
+    text-decoration: none;
+}
+
+.navbar{
+    width: 100%;
+    display: flex;
+    color: #ffb600;
+    justify-content: space-around;
+    align-items: center;
+    height: 120px;
+}
+
+.nav-list{
+    display: flex;
+    list-style-type: none;
+    width: 40%;
+    justify-content: space-around;
+    font-size: 1.2em;
+}
+
+.nav-list a{
+    color: #ffb600;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-list a:hover{
+    color: #f3d790;
+}
+
+.container{
+    width: 50%;
+    display: grid;
+    grid-template-areas: 
+        'intro intro'
+        'skills interests';
+    margin: 64px auto;
+    row-gap: 88px;
+    justify-items: space-evenly;
+}
+
+.intro{
+    grid-area: intro;
+    font-size: 1.2em;
+}
+
+.intro p:first-child{
+    font-size: 2em;
+    font-weight: 500;
+    margin-bottom: 48px;
+}
+
+.intro p{
+    margin-bottom: 24px;
+}
+
+.intro p:last-child{
+    margin-bottom: 0;
+}
+
+.judul-list{
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+.skills{
+    grid-area: skills;
+}
+
+.skills ul{
+    list-style-type: none;
+}
+
+.skills ul li{
+    margin-bottom: 16px;
+}
+
+.skills ul li:last-child{
+    margin-bottom: 0;
+}
+
+.interests{
+    grid-area: interests;
+    display: grid;
+    justify-content: end;
+    grid-template-rows: auto 1fr;
+}
+
+.interests ul{
+    list-style-type: none;
+}
+
+.interests ul li{
+    margin-bottom: 16px;
+}
+
+.interests ul li:last-child{
+    margin-bottom: 0;
+}
