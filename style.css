@@ -5,6 +5,7 @@
 
 body{
     font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
 }
 
 .container{
@@ -27,6 +28,7 @@ body{
     justify-content: space-around;
     align-items: center;
     height: 120px;
+    background-color: white;
 }
 
 .nav-list{
@@ -89,6 +91,60 @@ body{
     color: white;
 }
 
+.menu-toggle{
+    display: none;
+    flex-direction: column;
+    position: relative;
+    justify-content: space-between;
+    height: 20px;
+    /* background-color: red; */
+
+}
+
+.menu-toggle input{
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    right: -5px;
+    top: -3px;
+    opacity: 0;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.menu-toggle span{
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #ffb600;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+
+
+/* animasi toggle */
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4){
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+    transform: rotate(45deg) translate(-1px, -1px);
+
+}
+
+.menu-toggle input:checked ~ span:nth-child(4){
+    transform: rotate(-45deg)  translate(-1px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3){
+    transform: scale(0);
+    opacity: 0;
+}
+
 .hero-text{
     font-size: 2.6em;
     font-weight: bold;
@@ -103,3 +159,225 @@ span{
     color: #ffb600;
 }
 
+
+
+
+/* Responsive breakpoint*/
+@media screen and (max-width: 992px) {    
+    .nav-list{
+        display: flex;
+        list-style-type: none;
+        width: 65%;
+        justify-content: space-around;
+        font-size: 1em;
+    }   
+
+    .container{
+        background-position: 70px -110px;
+        background-size: 100%;
+        background-repeat-x: no-repeat;
+    }
+
+    .hero-text{
+        font-size: 3em;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 250px;
+        left: 42px;
+    }
+    
+    .menu-toggle{
+        display: none;
+    }
+
+    .sosmed{
+        position: absolute;
+        display: flex;
+        width: 100%;
+        bottom: 150px;
+        justify-content: center;
+        flex-direction: row;
+        right: 0;
+        bottom: 150px;
+        top: auto;
+        column-gap: 16px;
+    }
+
+    .sosmed a{
+        font-size: 1em;
+        margin-right: 16px;
+        width: 80px;
+        height: 80px;
+        border-radius: 50px;
+        float: left;
+        background-color: #000;
+        line-height: 80px;
+        text-align: center;
+        overflow: hidden;
+        margin-left: 0;
+        left: 0px;
+        color: #ffb600;
+        text-decoration: none;
+        font-weight: bold;
+        margin: 0;
+        width: 80;
+        height: 80px;
+        padding: 0px;
+        display: inline-block;
+    }
+
+    .sosmed i{
+        font-size: 2.2em;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        border-radius: 50px;
+        float: left;
+        color: #ffb600;
+        text-align: center;
+        display: inline-block;
+        left: -50px;
+        transition: 1s all;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .sosmed a:hover{
+        width: 200px;
+        background-color: #ffb600;
+        color: white;
+        transform: none;
+    }
+
+    .sosmed a:hover > *{
+        color: white;
+    }
+
+}
+
+
+
+@media screen and (max-width: 576px) {
+    .container{
+    background-position: 70px -110px;
+    background-size: 100%;
+    background-repeat-x: no-repeat;
+    }
+
+    .nav-list{
+        display: flex;
+        list-style-type: none;
+        width: 65%;
+        justify-content: center;
+        font-size: 1em;
+    }
+
+    .navbar ul li a{
+        color: white;
+        width: 800px;
+        height: 150px;
+        display: inline-block;
+        text-align: center;
+        line-height: 150px;
+        font-size: 1.5em;
+        font-weight: bold;
+        transition: .4s all;
+    }
+
+    .navbar ul li a:hover{
+        background-color: white;
+        color: #ffb600;
+        font-size: 1.7em;
+    }
+
+    .navbar ul{
+        position: absolute;
+        flex-direction: column;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        justify-content: center;
+        background-color: #ffb600;
+        z-index: 5;
+        align-items: center;
+        width: 100%;
+        transform: translateY(-100%);
+        transition: all 1s;
+        opacity: 0;
+    }
+
+    .menu-toggle{
+        display: flex;
+    }
+
+    .navbar ul.slide{
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .menu-toggle input:checked ~ span{
+        background-color: white;
+        z-index: 8;
+    }
+
+    .hero-text{
+        font-size: 3em;
+        line-height: normal;
+        top: 150px;
+        left: 0;
+        text-align: center;
+        padding: 16px;
+    }
+
+    .sosmed{
+        position: absolute;
+        display: flex;
+        width: 100%;
+        bottom: 150px;
+        justify-content: center;
+        column-gap: 0px;
+    }
+
+    .sosmed a{
+        margin-right: 16px;
+        width: 80px;
+        height: 80px;
+        border-radius: 50px;
+        float: left;
+        background-color: #000;
+        line-height: 80px;
+        transition: 1s all;
+        text-align: center;
+        overflow: hidden;
+        margin-left: 0;
+        left: 0px;
+        color: #ffb600;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .sosmed i{
+        font-size: 2.2em;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        border-radius: 50px;
+        float: left;
+        color: #ffb600;
+        text-align: center;
+        display: inline-block;
+        left: -50px;
+        transition: 1s all;
+    }
+
+    .sosmed a:hover{
+        width: 200px;
+        background-color: #ffb600;
+    }
+
+    .sosmed a:hover > *{
+        color: white;
+    }
+}

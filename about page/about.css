@@ -39,6 +39,59 @@ body{
     color: #f3d790;
 }
 
+.menu-toggle{
+    display: none;
+    flex-direction: column;
+    position: relative;
+    justify-content: space-between;
+    height: 20px;
+    /* background-color: red; */
+
+}
+
+.menu-toggle input{
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    right: -5px;
+    top: -3px;
+    opacity: 0;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.menu-toggle span{
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #ffb600;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+
+/* animasi toggle */
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4){
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+    transform: rotate(45deg) translate(-1px, -1px);
+
+}
+
+.menu-toggle input:checked ~ span:nth-child(4){
+    transform: rotate(-45deg)  translate(-1px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3){
+    transform: scale(0);
+    opacity: 0;
+}
+
 .container{
     width: 50%;
     display: grid;
@@ -107,4 +160,84 @@ body{
 
 .interests ul li:last-child{
     margin-bottom: 0;
+}
+
+
+/* Responsive breakpoint*/
+@media screen and (max-width: 992px){
+    .nav-list{
+        display: flex;
+        list-style-type: none;
+        width: 65%;
+        justify-content: space-around;
+        font-size: 1em;
+    }
+
+    .container{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .nav-list{
+        display: flex;
+        list-style-type: none;
+        width: 65%;
+        justify-content: center;
+        font-size: 1em;
+    }
+
+    .navbar ul li a{
+        color: white;
+        width: 800px;
+        height: 150px;
+        display: inline-block;
+        text-align: center;
+        line-height: 150px;
+        font-size: 1.5em;
+        font-weight: bold;
+        transition: .3s all;
+    }
+
+    .navbar ul li a:hover{
+        background-color: white;
+        color: #ffb600;
+        font-size: 1.7em;
+    }
+
+    .navbar ul{
+        position: absolute;
+        flex-direction: column;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        justify-content: center;
+        background-color: #ffb600;
+        z-index: 5;
+        align-items: center;
+        width: 100%;
+        transform: translateY(-100%);
+        transition: all 1s;
+        opacity: 0;
+    }
+
+    .menu-toggle{
+        display: flex;
+    }
+
+    .navbar ul.slide{
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .menu-toggle input:checked ~ span{
+        background-color: white;
+        z-index: 8;
+    }
+
+    .container{
+        text-align: center;
+        font-size: 1.2em;
+        width: 90%;
+    }
 }
