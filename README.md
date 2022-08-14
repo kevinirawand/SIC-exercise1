@@ -1,2 +1,2 @@
 # SIC-exercise1
-Samsung Inovation Campus Exercie 1
+Samsung Inovation Campus Exercise 1
